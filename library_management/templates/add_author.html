@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add Author</title>
+</head>
+<body>
+<h1>Add Author</h1>
+{% for author in authors %}
+    <li>{{ author.name }}</li>
+{% empty %}
+    <li>No authors found.</li>
+{% endfor %}
+
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Add Author</button>
+</form>
+</body>
+</html>
